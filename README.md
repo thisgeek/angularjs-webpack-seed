@@ -134,6 +134,14 @@ $ yarn run serve
 **Note: it is recommended you run this command from the master branch or a tag.  By Default this proxies with the
  webpack-dev-server proxy.**
 
+### Analyze
+Start a local webserver to show a visualization of bundle statistics:
+
+```bash
+$ yarn run analyze
+```
+
+**Note**: You must run the build task before analyzing.
 
 ## Dependency Management
 Build packages (like Webpack) are installed through Yarn into _package.json_, using

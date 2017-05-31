@@ -5,6 +5,7 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpackMerge = require('webpack-merge');
 const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = webpackMerge(commonConfig, {
 
@@ -29,7 +30,11 @@ module.exports = webpackMerge(commonConfig, {
       comments: false,
       sourceMap: true
     }),
-    new ExtractTextPlugin('[name].[chunkhash].style.css')
+    new ExtractTextPlugin('[name].[chunkhash].style.css'),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: true
+    })
   ]
 
 });
